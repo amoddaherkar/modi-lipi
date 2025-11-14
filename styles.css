@@ -3,7 +3,7 @@
     --text-color: #f0f6fc;
     --accent: #FF9933;
     --border-color: #d3d3d3;
-    --link-color: #adbac7;
+    --link-color: var(--accent);
 }
 
 body {
@@ -19,6 +19,10 @@ header {
     text-align: center;
     padding: 2rem;
     border-bottom: 1px solid var(--border-color);
+}
+
+h1, h2, h3 {
+    text-align: center;
 }
 
 h1 { font-size: 3rem; margin: 0; }
@@ -62,47 +66,30 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 }
 
 .alphabet-table {
-    display: grid;
-    gap: 1rem;
+    width: 100%;
+    border-collapse: collapse;
     margin: 2rem 0;
 }
 
-.row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 0.5rem;
+.alphabet-table th,
+.alphabet-table td {
     border: 1px solid var(--border-color);
     padding: 1rem;
-    border-radius: 4px;
-}
-
-.row h3 { grid-column: 1 / -1; text-align: center; }
-
-.cell {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    padding: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
     font-size: 1.5rem;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    font-family: 'Noto Sans Modi', serif; /* For Modi Unicode */
+    font-family: 'Noto Sans Modi', serif;
 }
 
-.cell:hover {
-    box-shadow: 0 0 10px var(--accent), inset 0 0 10px var(--accent);
-    transform: scale(1.05);
+.alphabet-table th {
+    background-color: #2d333b;
+    color: var(--text-color);
+    font-size: 1.2rem;
 }
 
-.cell::before {
-    content: attr(data-modi) " " attr(data-dev);
-    font-size: inherit;
-}
-
-.note {
-    text-align: center;
+.alphabet-table td.cell:hover {
+    color: var(--accent);
+    background-color: #2d333b;
+    transition: all 0.3s ease;
 }
 
 .transcription-table {
@@ -169,8 +156,12 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 }
 
 @media (max-width: 768px) {
-    .row { grid-template-columns: repeat(5, 1fr); }
     .image-gallery img { width: 100%; max-width: 600px; height: auto; }
     .transcription-table .row { grid-template-columns: 1fr; }
     .transcription-table .cell img { max-width: 100%; }
+    .alphabet-table th,
+    .alphabet-table td {
+        display: block;
+        width: 100%;
+    }
 }
