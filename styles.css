@@ -4,6 +4,7 @@
     --accent: #FF9933;
     --border-color: #d3d3d3;
     --link-color: var(--accent);
+    --caption-color: #d3d3d3; /* Light grey for captions */
 }
 
 body {
@@ -62,7 +63,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     font-size: 0.9rem;
     font-style: italic;
     margin-top: 0.5rem;
-    color: var(--link-color);
+    color: var(--caption-color); /* Light grey for captions */
 }
 
 .alphabet-table {
@@ -90,12 +91,11 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
 .alphabet-table td.cell:hover {
     color: var(--accent);
-    background-color: #2d333b;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .alphabet-table colgroup col {
-    width: 20%;
+    width: 20%; /* Ensures 5 equal columns */
 }
 
 .transcription-table {
