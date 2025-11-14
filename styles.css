@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #161b22; /* Restored dark background */
+    --bg-color: #161b22; /* Dark background */
     --text-color: #f0f6fc;
     --accent: #FF9933; /* Orange accent */
     --border-color: #d3d3d3;
@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Libre Baskerville', Georgia, serif;
-    background-color: var(--bg-color); /* Ensure dark background applies */
+    background-color: var(--bg-color); /* Ensure dark background */
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -76,7 +76,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
 .alphabet-table th {
     background-color: var(--light-orange); /* Light orange for headers */
-    color: var(--text-color);
+    color: var(--accent); /* Orange text for headings */
     font-size: 1.2rem;
     border: 2px solid var(--accent); /* Orange border */
 }
@@ -112,14 +112,13 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 1rem;
-    border: 2px solid var(--accent); /* Visible orange border */
-    padding: 1rem;
+    padding: 1rem; /* Removed orange border */
     border-radius: 4px;
 }
 
 .transcription-table .cell {
     padding: 1rem;
-    border: 1px solid var(--border-color); /* Inner cell borders */
+    border: 1px solid var(--border-color); /* Inner cell borders only */
     border-radius: 4px;
     text-align: center;
 }
@@ -152,6 +151,19 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 
 #references a:hover {
     text-decoration: underline;
+}
+
+.note {
+    text-align: center; /* Center the note under alphabet table */
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.footer-note {
+    text-align: center; /* Center the footer note */
+    font-size: 0.9rem; /* Match note text size */
+    color: var(--text-color);
+    margin-top: 1rem;
 }
 
 .fade-in {
