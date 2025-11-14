@@ -1,5 +1,3 @@
-code
-
 :root {
     --bg-color: #161b22;
     --text-color: #f0f6fc;
@@ -71,7 +69,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     width: 100%;
     border-collapse: collapse;
     margin: 2rem 0;
-    table-layout: fixed; /* Ensures columns are evenly distributed */
+    table-layout: fixed;
 }
 
 .alphabet-table th,
@@ -81,7 +79,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     text-align: center;
     font-size: 1.5rem;
     font-family: 'Noto Sans Modi', serif;
-    vertical-align: middle; /* Centers content vertically */
+    vertical-align: middle;
 }
 
 .alphabet-table th {
@@ -97,7 +95,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
 }
 
 .alphabet-table colgroup col {
-    width: 20%; /* Distributes width evenly across 5 columns */
+    width: 20%;
 }
 
 .transcription-table {
@@ -169,7 +167,7 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     .transcription-table .cell img { max-width: 100%; }
     .alphabet-table th,
     .alphabet-table td {
-        display: table-cell; /* Ensures table layout on mobile */
-        width: auto; /* Allows natural width */
+        display: table-cell;
+        width: auto;
     }
 }
