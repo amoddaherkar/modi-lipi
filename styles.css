@@ -1,15 +1,16 @@
 :root {
-    --bg-color: #161b22;
+    --bg-color: #161b22; /* Restored dark background */
     --text-color: #f0f6fc;
-    --accent: #FF9933;
+    --accent: #FF9933; /* Orange accent */
     --border-color: #d3d3d3;
     --link-color: var(--accent);
     --caption-color: #d3d3d3; /* Light grey for captions */
+    --light-orange: #FFDAB9; /* Light orange for table headers */
 }
 
 body {
     font-family: 'Libre Baskerville', Georgia, serif;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color); /* Ensure dark background applies */
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -73,8 +74,15 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     table-layout: fixed;
 }
 
-.alphabet-table th,
-.alphabet-table td {
+.alphabet-table th {
+    background-color: var(--light-orange); /* Light orange for headers */
+    color: var(--text-color);
+    font-size: 1.2rem;
+    border: 2px solid var(--accent); /* Orange border */
+}
+
+.alphabet-table td,
+.alphabet-table td.cell {
     border: 1px solid var(--border-color);
     padding: 1rem;
     text-align: center;
@@ -83,15 +91,11 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     vertical-align: middle;
 }
 
-.alphabet-table th {
-    background-color: #2d333b;
-    color: var(--text-color);
-    font-size: 1.2rem;
-}
-
 .alphabet-table td.cell:hover {
-    color: var(--accent);
-    transition: color 0.3s ease;
+    color: var(--accent); /* Orange text on hover */
+    border: 2px solid var(--accent); /* Orange outline on hover */
+    background-color: transparent; /* No fill */
+    transition: color 0.3s ease, border 0.3s ease;
 }
 
 .alphabet-table colgroup col {
@@ -108,14 +112,14 @@ main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 1rem;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--accent); /* Visible orange border */
     padding: 1rem;
     border-radius: 4px;
 }
 
 .transcription-table .cell {
     padding: 1rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color); /* Inner cell borders */
     border-radius: 4px;
     text-align: center;
 }
